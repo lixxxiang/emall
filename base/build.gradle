@@ -63,4 +63,6 @@ dependencies {
     api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 
     api 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
 }

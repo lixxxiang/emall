@@ -9,6 +9,7 @@ import io.reactivex.schedulers.Schedulers
 import org.reactivestreams.Subscriber
 
 fun <T> Observable<T>.execute(observer: BaseObserver<T>, lifecycleProvider: LifecycleProvider<*>){
+    println("----Observable----")
     this.observeOn(AndroidSchedulers.mainThread())
             .compose(lifecycleProvider.bindToLifecycle())
             .subscribeOn(Schedulers.io())
