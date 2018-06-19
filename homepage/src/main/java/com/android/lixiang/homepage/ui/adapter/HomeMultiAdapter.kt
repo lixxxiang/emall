@@ -13,6 +13,8 @@ import com.youth.banner.Banner
 
 import java.util.ArrayList
 
+
+
 class HomeMultiAdapter
 /**
  * Same as QuickAdapter#QuickAdapter(Context,int) but with
@@ -28,13 +30,30 @@ class HomeMultiAdapter
 
     }
 
+    var bannerDataType: List<String> = ArrayList()
+    var bannerProductId: List<String> = ArrayList()
+    var bannerLink: List<String> = ArrayList()
+
     override fun convert(helper: BaseViewHolder, item: HomeMultiItemEntity) {
 
+        val banner = helper.getView<com.youth.banner.Banner>(R.id.banner)
+        val bannerImages: MutableList<String> = mutableListOf()
         when (item.itemType) {
             0 -> {
-                val bannerEntity: BannerEntity = (item.getField("BANNER") as ArrayList<*>)[0] as BannerEntity
-//                helper.setText(R.id.etv, bannerEntity.imageUrl)
-
+                val size = (item.getField("BANNER") as ArrayList<*>).size
+                banner.setImageLoader(GlideImageLoader())
+                for (i in 0 until size)
+                    bannerImages.add(((item.getField("BANNER") as ArrayList<*>)[i] as BannerEntity).imageUrl )
+                println(bannerImages)
+                banner.setImages(bannerImages)
+//                bannerDataType = entity.getField(MultipleFields.BANNERS_DATA_TYPE) as List<String>
+//                bannerProductId = entity.getField(MultipleFields.BANNERS_PRODUCT_ID) as List<String>
+//                bannerLink = entity.getField(MultipleFields.BANNERS_LINK) as List<String>
+//
+                banner.start()
+//                mIsInitBanner = true
+//                holder.addOnClickListener(R.id.banner)
+//                banner.setOnBannerListener(this)
             }
             1 -> {
                 val everyDayPicEntity: EveryDayPicEntity = (item.getField("EVERY_DAY_PIC") as ArrayList<*>)[0] as EveryDayPicEntity
