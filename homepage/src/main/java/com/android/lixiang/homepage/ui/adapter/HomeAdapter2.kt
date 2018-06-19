@@ -8,10 +8,10 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.orhanobut.logger.Logger
 
 
-class HomeAdapter(layoutResId: Int, data: MutableList<HomePageUnitsBean.DataBean.PiecesBean>)
-    : BaseQuickAdapter<HomePageUnitsBean.DataBean.PiecesBean, BaseViewHolder>(layoutResId, data) {
-    override fun convert(helper: BaseViewHolder?, item: HomePageUnitsBean.DataBean.PiecesBean?) {
-        helper!!.setText(R.id.tv, item!!.posTitle)
+class HomeAdapter2(layoutResId: Int, data: List<HomePageUnitsBean>)
+    : BaseQuickAdapter<HomePageUnitsBean, BaseViewHolder>(layoutResId, data) {
+    override fun convert(helper: BaseViewHolder?, item: HomePageUnitsBean) {
+        helper!!.setText(R.id.tv, mTitle[helper.layoutPosition])
     }
 
 
@@ -22,5 +22,8 @@ class HomeAdapter(layoutResId: Int, data: MutableList<HomePageUnitsBean.DataBean
     }
 
     private fun dataFormat() {
+        for (i in 0 until data[0].data!!.size){
+            mTitle[i] = data[0].data!![i].title!!
+        }
     }
 }

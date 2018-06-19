@@ -33,10 +33,6 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
     private val mMainFragment by lazy { MainFragment() }
 
 
-    override fun test() {
-        toast("hi")
-    }
-
     private fun initFragment(){
         val manager = supportFragmentManager.beginTransaction()
         manager.add(R.id.mFrameLayout,mHomeFragment)

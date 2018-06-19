@@ -13,7 +13,6 @@ class MainPresenter @Inject constructor():BasePresenter<MainView>(){
     @Inject
     lateinit var mMainService : MainService
     fun testPresenter(){
-        mView.test()
     }
 
     fun testPresenterWithService(){

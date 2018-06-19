@@ -11,11 +11,9 @@ class MainFragmentPresenter @Inject constructor(): BasePresenter<MainFragmentVie
     @Inject
     lateinit var mMainService : MainService
     fun testPresenter(){
-        mView.test()
     }
 
     fun testPresenterWithService(){
-        println("in")
         mMainService.testService()
 //        mView.test()
     }

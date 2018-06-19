@@ -29,9 +29,6 @@ class MainFragment : BaseMvpFragment<MainFragmentPresenter>(), MainFragmentView 
                 .inject(this)
     }
 
-    override fun test() {
-        println("fragment return ok")
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,11 +39,8 @@ class MainFragment : BaseMvpFragment<MainFragmentPresenter>(), MainFragmentView 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         btn.setOnClickListener {
-
-
             mPresenter.mView = this
             mPresenter.testPresenterWithService()
-
         }
     }
 }

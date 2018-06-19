@@ -10,8 +10,6 @@ import io.reactivex.functions.Function
  */
 class BaseFunc<T> : Function<BaseResp<T>, Observable<T>> {
     override fun apply(t: BaseResp<T>): Observable<T> {
-        print("lllllll")
-        print(t)
         if (t.status != ResultCode.SUCCESS) {
             return Observable.error(BaseException(t.status, t.message))
         }
