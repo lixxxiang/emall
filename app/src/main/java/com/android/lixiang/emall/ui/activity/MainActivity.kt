@@ -13,6 +13,7 @@ import com.android.lixiang.emall.injection.component.DaggerMainComponent
 import com.android.lixiang.emall.injection.module.MainModule
 import com.android.lixiang.emall.presenter.MainPresenter
 import com.android.lixiang.emall.presenter.view.MainView
+import com.android.lixiang.emall.ui.fragment.ClassifyFragment
 import com.android.lixiang.emall.ui.fragment.MainFragment
 import com.android.lixiang.homepage.ui.fragment.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,16 +31,22 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
 
     private val mStack = Stack<Fragment>()
     private val mHomeFragment by lazy { HomeFragment() }
+    private val mClassifyFragment by lazy { ClassifyFragment() }
+
     private val mMainFragment by lazy { MainFragment() }
 
 
     private fun initFragment(){
         val manager = supportFragmentManager.beginTransaction()
         manager.add(R.id.mFrameLayout,mHomeFragment)
+        manager.add(R.id.mFrameLayout,mClassifyFragment)
+
         manager.add(R.id.mFrameLayout,mMainFragment)
         manager.commit()
         mStack.add(mHomeFragment)
+        mStack.add(mClassifyFragment)
         mStack.add(mMainFragment)
+
     }
 
 
