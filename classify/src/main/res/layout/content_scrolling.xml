@@ -12,10 +12,60 @@
     android:id="@+id/nestedScrollview"
     tools:showIn="@layout/activity_optics">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/large_text" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+        <RelativeLayout
+            android:id="@+id/classify_introduction_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/classify_compasses_iv"
+                android:layout_width="13dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_compasses" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/classify_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/classify_compasses_iv"
+                android:textColor="#B4A078"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/classify_introduction_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/classify_compasses_iv"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#9B9B9B"
+                android:textSize="12dp" />
+            <RelativeLayout
+                android:id="@+id/classify_space_rl"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="6dp"
+                android:background="#F0F0F0" />
+        </RelativeLayout>
+        <TextView
+            android:layout_below="@+id/classify_introduction_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text" />
+    </RelativeLayout>
+
 
 </android.support.v4.widget.NestedScrollView>
