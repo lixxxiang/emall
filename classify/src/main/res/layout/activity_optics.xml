@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.android.lixiang.classify.ui.activity.OpticsActivity">
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
         <ru.shmakinv.android.material.widget.GpCollapsingToolbar
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
@@ -24,25 +26,27 @@
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
 
             <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/mHeader"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 android:background="@android:color/transparent"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/classify_head_bg"
-                tools:ignore="ContentDescription"/>
+                tools:ignore="ContentDescription" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/mToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:layout_collapseMode="pin"
                 app:contentInsetLeft="0dp"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
                 <android.support.v7.widget.AppCompatImageView
                     android:id="@+id/classify_toolbar_search_iv"
                     android:layout_width="wrap_content"
@@ -55,5 +59,6 @@
 
         </ru.shmakinv.android.material.widget.GpCollapsingToolbar>
     </android.support.design.widget.AppBarLayout>
+
     <include layout="@layout/content_scrolling" />
 </android.support.design.widget.CoordinatorLayout>
