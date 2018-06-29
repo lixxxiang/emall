@@ -23,8 +23,10 @@ import com.android.lixiang.classify.presenter.injection.component.DaggerClassify
 import com.android.lixiang.classify.presenter.injection.module.ClassifyModule
 import com.android.lixiang.classify.presenter.view.OpticsView
 import com.android.lixiang.classify.ui.adapter.OpticsAdapter
+import com.android.lixiang.search.ui.activity.SearchActivity
 import com.orhanobut.logger.Logger
 import kotlinx.android.synthetic.main.content_scrolling.*
+import org.jetbrains.anko.startActivity
 
 
 class OpticsActivity : BaseMvpActivity<OpticsPresenter>(), OpticsView {
@@ -74,6 +76,10 @@ class OpticsActivity : BaseMvpActivity<OpticsPresenter>(), OpticsView {
         initTab()
         initLayoutManager()
         getData()
+
+        classify_toolbar_search_iv.setOnClickListener {
+            startActivity<SearchActivity>()
+        }
     }
 
     private fun initLayoutManager() {

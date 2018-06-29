@@ -23,5 +23,9 @@ class ClassifyFragment : Fragment() {
         btn.setOnClickListener {
             startActivity<OpticsActivity>()
         }
+
+        btn2.setOnClickListener {
+            startActivity<OpticsActivity>()
+        }
     }
 }

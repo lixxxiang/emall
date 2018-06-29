@@ -47,18 +47,22 @@
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <android.support.v7.widget.AppCompatImageView
-                    android:id="@+id/classify_toolbar_search_iv"
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_marginRight="12dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/ic_search_2" />
-            </android.support.v7.widget.Toolbar>
+                    android:layout_marginTop="12dp">
 
+                    <android.support.v7.widget.AppCompatImageButton
+                        style="@style/CustomActionBar.ToolbarNavigationButtonStyle"
+                        android:id="@+id/classify_toolbar_search_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_search_2" />
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
         </ru.shmakinv.android.material.widget.GpCollapsingToolbar>
     </android.support.design.widget.AppBarLayout>
-
     <include layout="@layout/content_scrolling" />
 </android.support.design.widget.CoordinatorLayout>
